@@ -13,6 +13,6 @@ public interface ProductService {
     public List<Product> getAllProducts();
     public void deleteProduct(Integer productId);
     public Product getProduct(int productId);
-    public Product updateEmployee (Product product);
+    public Product updateProduct (Product product);
 
 }

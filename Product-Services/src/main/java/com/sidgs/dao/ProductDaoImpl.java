@@ -5,7 +5,6 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.*;
 import java.util.List;
 
 /**
@@ -20,6 +19,7 @@ public class ProductDaoImpl implements ProductDao {
 
 
     public void addProduct(Product product) {
+
         sessionFactory.getCurrentSession().saveOrUpdate(product);
     }
 
@@ -43,6 +43,7 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     public Product getProduct(int productId) {
-        return (Product) sessionFactory.getCurrentSession().get(Product.class, productId);
+        return (Product) sessionFactory.getCurrentSession().get(
+                Product.class, productId);
     }
 }

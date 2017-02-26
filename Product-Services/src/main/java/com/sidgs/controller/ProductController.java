@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Logger;
+import org.jboss.logging.Logger;
 
 /**
  * Created by Vytlasai on 2/23/2017.
@@ -21,7 +20,7 @@ import java.util.logging.Logger;
 @Controller
 public class ProductController {
 
-    private static final Logger logger = Logger.getLogger("ProductController.class");
+    private static final Logger logger = Logger.getLogger(ProductController.class);
     public ProductController(){
         System.out.println("ProductController()");
     }
@@ -45,14 +44,14 @@ public class ProductController {
         return model;
     }
 
-    @RequestMapping(value = "/saveProduct", method = RequestMethod.GET)
+    @RequestMapping(value = "/saveProduct", method = RequestMethod.POST)
     public ModelAndView saveProduct(@ModelAttribute Product product) {
 
         if(product.getId()==0) {
             // if product id = 0 then creating the
             productService.addProduct(product);
         } else {
-            productService.updateEmployee(product);
+            productService.updateProduct(product);
         }
         return new ModelAndView("redirect:/");
     }
