@@ -15,7 +15,7 @@
     <mvc:annotation-driven />
 
     <!-- Specifying the Resource location to load JS, CSS, Images etc -->
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
 
     <!-- View Resolver -->
     <bean
@@ -45,7 +45,7 @@
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
             </props>
         </property>
-        <property name="packagesToScan" value="com.jwt.model"></property>
+        <property name="packagesToScan" value="com.sidgs.model"></property>
     </bean>
 
     <!-- Transaction -->
