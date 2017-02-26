@@ -38,8 +38,8 @@
                     <td>${product.product_brand}</td>
                     <td> ${product.product_style} </td>
                     <td><a href="editProduct?id=${product.id}">Edit</a>
-                             <a
-                        href="deleteProduct?id=${product.id}">Delete</a></td>
+
+                       <a href="deleteProduct?id=${product.id}">Delete</a></td>
 
                 </tr>
             </c:forEach>

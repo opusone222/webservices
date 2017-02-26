@@ -56,6 +56,13 @@ public class ProductController {
         return new ModelAndView("redirect:/");
     }
 
+    @RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
+    public ModelAndView deleteProduct(HttpServletRequest request) {
+        int productId = Integer.parseInt(request.getParameter("id"));
+        productService.deleteProduct(productId);
+        return new ModelAndView("redirect:/");
+    }
+
     @RequestMapping(value = "/editProduct", method = RequestMethod.GET)
     public ModelAndView editProduct(HttpServletRequest request){
         int productId = Integer.parseInt(request.getParameter("id"));
