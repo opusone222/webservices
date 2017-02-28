@@ -45,7 +45,7 @@ public class ServiceController {
     public ModelAndView newContact(ModelAndView model) {
         Service service = new Service();
         model.addObject("service", service);
-        model.setViewName("ServiceForm");
+        model.setViewName("serviceForm");
         return model;
     }
 
@@ -68,11 +68,11 @@ public class ServiceController {
         return new ModelAndView("redirect:/service");
     }
 
-    @RequestMapping(value = "/editEmployee", method = RequestMethod.GET)
-    public ModelAndView editContact(HttpServletRequest request) {
+    @RequestMapping(value = "/editService", method = RequestMethod.GET)
+    public ModelAndView editService(HttpServletRequest request) {
         int service_Id = Integer.parseInt(request.getParameter("service_Id"));
         Service service = serviceService.getService(service_Id);
-        ModelAndView model = new ModelAndView("ServiceForm");
+        ModelAndView model = new ModelAndView("serviceForm");
         model.addObject("service", service);
 
         return model;

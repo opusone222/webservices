@@ -11,11 +11,8 @@
         <h1>New/Edit Service</h1>
         <form:form action="saveService" method="post" modelAttribute="service">
         <table>
-            <form:hidden path="id"/>
-            <tr>
-                <td>id:</td>
-                <td><form:input path="id" /></td>
-            </tr>
+
+
 
             <tr>
                 <td>ServiceId:</td>
